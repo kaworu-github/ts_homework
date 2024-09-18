@@ -1,0 +1,143 @@
+console.log("завдання 1");
+const numbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+function returnPariedNumbs(arr:number[]) {
+    let filtered = arr.filter((i) => i % 2 == 0);
+    return filtered;
+};
+console.log(returnPariedNumbs(numbers));
+
+console.log("завдання 2");
+
+const students: { name: string; score: number; }[] = [
+    { name: 'John', score: 75 },
+    { name: 'Jane', score: 82 },
+    { name: 'Jim', score: 65 },
+    { name: 'Jill', score: 90 },
+    {name: 'Jake', score: 61}
+];
+
+function betterSeventy(arr:{ name: string; score: number; }[]) {
+    let filtered_arr = arr.filter((student) => student.score > 70);
+    return filtered_arr;
+};
+console.log(betterSeventy(students));
+
+console.log("завдання 3");
+
+const fruits: string[] = ['apple', 'banana', 'cherry', 'date', 'elderberry'];
+
+function returnLengthOfStr(arr:string[]) {
+    let length_arr = arr.map((i) => i.length);
+    return length_arr;
+};
+console.log(returnLengthOfStr(fruits));
+
+
+console.log("завдання 4");
+
+const products: { id: number; name: string; price: number; }[] = [
+    { id: 1, name: 'Laptop', price: 1000 },
+    { id: 2, name: 'Keyboard', price: 50 },
+    { id: 3, name: 'Mouse', price: 25 },
+    { id: 4, name: 'Monitor', price: 300 }
+];
+
+function returnSumAllProducts(arr:{ id: number; name: string; price: number; }[]) {
+    let price = arr.map((i) => i.price)
+    let sum = 0;
+    for (const i of price) {
+        sum += i;
+    };
+    return sum;   
+};
+console.log(returnSumAllProducts(products));
+
+console.log("звдання 5");
+
+const employees: { name: string; age: number; position: string; }[] = [
+    { name: 'Alice', age: 30, position: 'Developer' },
+    { name: 'Bob', age: 45, position: 'Manager' },
+    { name: 'Charlie', age: 35, position: 'Designer' },
+    { name: 'David', age: 25, position: 'Developer' }
+];
+
+function returnPosition(arr:{ name: string; age: number; position: string; }[]) {
+    let dev_position = arr.filter((employee) => employee.position == "Developer");
+    return dev_position;   
+};
+console.log(returnPosition(employees));
+
+console.log("завдання 6");
+
+const arr_numbers: number[] = [10, 15, 20, 25, 30, 35, 40];
+
+function returnFirstNumber(arr:number[]) {
+    let filtered_numbers = arr.filter((i) => i > 20);
+    let include_first_number = filtered_numbers[0];
+    return include_first_number;
+};
+
+console.log(returnFirstNumber(arr_numbers));
+
+console.log("завдання 7");
+
+const books: { title: string; author: string; year: number; }[] = [
+    { title: 'Book A', author: 'Author 1', year: 2000 },
+    { title: 'Book B', author: 'Author 2', year: 2015 },
+    { title: 'Book C', author: 'Author 3', year: 1995 },
+    { title: 'Book D', author: 'Author 1', year: 2010 }
+];
+
+function returnBooksAfter(arr:{ title: string; author: string; year: number; }[]) {
+    let filterd_books = arr.filter((book) => book.year > 2000);
+    return filterd_books;
+};
+console.log(returnBooksAfter(books));
+
+console.log("завдання 8");
+
+const temperatures: number[] = [22, 19, 23, 25, 20, 18, 24];
+
+function midleValueofNumbers(arr:number[]) {
+    let sum = 0;
+    for (let i = 0; i < temperatures.length; i++) {
+        sum += temperatures[i];
+    };
+    let midle_value = sum / temperatures.length;
+    return midle_value;
+};
+console.log(midleValueofNumbers(temperatures));
+
+console.log("завдання 9");
+
+const orders: { orderId: number; amount: number; status: string; }[] = [
+    { orderId: 1, amount: 250, status: 'shipped' },
+    { orderId: 2, amount: 450, status: 'pending' },
+    { orderId: 3, amount: 120, status: 'delivered' },
+    { orderId: 4, amount: 300, status: 'shipped' },
+    //{orderId: 5, amount: 50, status: "shipped"}
+];
+
+function returnSumAmounts(arr:{ orderId: number; amount: number; status: string; }[]) {
+    let sum_amounts = 0;
+    let shipped_status = arr.filter((order) => order.status == "shipped" );
+    shipped_status.map((order) => sum_amounts += order.amount);
+    return sum_amounts;
+};
+console.log(returnSumAmounts(orders));
+
+console.log("завдання 10");
+
+const cars: { brand: string; model: string; year: number; }[] = [
+    { brand: 'Toyota', model: 'Corolla', year: 2010 },
+    { brand: 'Honda', model: 'Civic', year: 2015 },
+    { brand: 'Ford', model: 'Mustang', year: 2020 },
+    { brand: 'Toyota', model: 'Camry', year: 2018 }
+];
+
+function returnToyotaCar(arr:{ brand: string; model: string; year: number; }[]) {
+    let toyota_arr = arr.filter((car) => car.brand == "Toyota");
+    return toyota_arr;
+};
+console.log(returnToyotaCar(cars));
