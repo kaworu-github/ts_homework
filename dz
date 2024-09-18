@@ -1,0 +1,61 @@
+// nomer 1
+
+interface Product {
+    name: String,
+    price: number,
+    category: String
+};
+let product_list: Product[] = [
+    {name: "cola", price: 30, category: "drink"},
+    {name: "meat", price: 70, category: "food"},
+    {name: "sous", price: 67, category: "supplementary"},
+    {name: "pizza", price: 200, category: "food"},
+    {name: "apple", price: 8, category: "fruit"}
+];
+function getSpecialProduct(arr:Product[]): Product[]{
+    let filtered_arr_products = arr.filter(({category}) => category == "food");
+    return filtered_arr_products
+};
+console.log(getSpecialProduct(product_list));
+
+//nomer 2
+
+/* interface Employee {
+
+    name: String,
+    position: String
+};
+
+let empoyee_list: Employee[] = [
+    {name: "Jame", position: "director"}
+];
+
+interface Manager {
+    name: String,
+    departament: String
+};
+
+let manager_list:Manager[] = [
+    {name:"Bob", departament:"WRU"}
+] */
+
+//nomer 3
+
+interface Student{
+    name: String,
+    age: number,
+    grade:number
+};
+
+let sudent_list:Student[] = [
+    {name: "Lucka", age:21, grade: 12},
+    {name: "Anna", age: 18, grade:10},
+    {name: "Bob", age:17, grade: 11}
+];
+
+function sortStudentByAnyParams(arr:Student[]): Student[]{
+    return arr.sort((a, b) => a.age - b.age).sort((a, b) => a.grade - b.grade);
+};
+console.log(sortStudentByAnyParams(sudent_list));
+
+//nomer 4
